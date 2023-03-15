@@ -1,0 +1,36 @@
+
+<body>
+    <div class="all">
+    <h1>Gestion des rapports de visite</h1>
+    <br>
+    <h2>Connexion</h2>
+    <div class="form_container">
+        <link href="https://fr.allfont.net/allfont.css?fonts=raleway-dots" rel="stylesheet" type="text/css" />
+    
+        <form>
+            <div class="groupe">
+                <label for="login">Login :</label>
+                <br/>
+                <input type="text" name="login" id="login" [(ngModel)]="login">
+            </div>
+            <br/>
+            <h3>Votre login : {{ login }}</h3>
+            <div class="group">
+                <label for="password">Password : </label>
+                <br/>
+                <input type="password" name="password" id ="password" [(ngModel)]="password">
+            </div>
+            <br/>
+            <div class="alert">
+            <form class="group" name="frmLogin" (ngSubmit)="valider()">
+
+                <div class="alert" [hidden]="estCache">{{lblMessage}} </div>
+                    <button class="button" type="submit">Valider</button>
+                
+                
+            </form>
+            </div>
+        </form>
+    </div>
+    </div>
+</body>

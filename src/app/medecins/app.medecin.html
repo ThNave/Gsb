@@ -1,0 +1,18 @@
+<app-navbar></app-navbar>
+<h2>Les médecins</h2>
+
+<!--<nav class="navbar navbar-inverse" [hidden]="estCacheMenu">
+    <ul class="nav navbar-nav"
+        style="display:flex; flex-direction:row;
+            justify-content: center">
+        <li><a (click)="derniersRapports()">Derniers Rapports</a></li>
+        <li><a (click)="majMedecin()">MAJ</a></li>
+    </ul>
+</nav> -->
+
+<div class="col-lg-6">
+    <div class="form-group">
+        <input type="search" placeholder="Nom du Medecin"
+        [(ngModel)]="nomMedecin" (keyup)="charger()"/>
+    </div>
+</div>
