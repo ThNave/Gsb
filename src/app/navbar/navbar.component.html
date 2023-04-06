@@ -1,10 +1,8 @@
 <nav class="navbar">
-
-    <h1>Gestion des rapports de visite</h1>
-<br>
-    <ul class="nav navbar-nav"s>
-    <li><a routerLink = "/visites">Gestion des rapports</a></li>
-
-    <li><a routerLink = "/medecins">Gestion des médecins</a></li>
+    <h3>Accueil GSB</h3>
+    <ul class="nav navbar-nav" style=" flex-direction: row;
+    justify-content:left">
+        <li><a [routerLink]="['/visites']">Gestion des rapports</a></li>
+        <li><a [routerLink]="['/medecins']">Gestion des médecins</a></li>
     </ul>
 </nav>

@@ -1,36 +1,43 @@
+<!DOCTYPE html>
+<head>
+<!-- Design by foolishdeveloper.com -->
+<title></title>
+ 
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
 
+
+
+
+</head>
 <body>
-    <div class="all">
-    <h1>Gestion des rapports de visite</h1>
-    <br>
-    <h2>Connexion</h2>
-    <div class="form_container">
-        <link href="https://fr.allfont.net/allfont.css?fonts=raleway-dots" rel="stylesheet" type="text/css" />
     
-        <form>
-            <div class="groupe">
-                <label for="login">Login :</label>
-                <br/>
-                <input type="text" name="login" id="login" [(ngModel)]="login">
-            </div>
-            <br/>
-            <h3>Votre login : {{ login }}</h3>
-            <div class="group">
-                <label for="password">Password : </label>
-                <br/>
-                <input type="password" name="password" id ="password" [(ngModel)]="password">
-            </div>
-            <br/>
-            <div class="alert">
-            <form class="group" name="frmLogin" (ngSubmit)="valider()">
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+          
+<h2>
+    {{titre}}
+</h2>
 
-                <div class="alert" [hidden]="estCache">{{lblMessage}} </div>
-                    <button class="button" type="submit">Valider</button>
-                
-                
-            </form>
-            </div>
-        </form>
-    </div>
-    </div>
+<form class="col-lg-6" name="login" (ngSubmit)="valider()">
+    <h1>Gestion des rapport de visite</h1>
+
+    <h1>Connexion :</h1>
+
+    <label for="login">Login</label><br>
+    <input type="text" name="login" id="login" [(ngModel)]="login"><br><br>
+
+    <h3>Votre login est {{login}}</h3>
+
+    <label for="password">Password</label><br>
+    <input type="password" name="password" id="password" [(ngModel)]="password"><br>
+    
+    <div class="alert alert-danger" [hidden]="estCache">{{lblMessage}}</div>
+    <button type="submit">Valider</button>
+
+</form>
+ 
 </body>
