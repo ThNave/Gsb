@@ -25,15 +25,43 @@
     </div>
 
 
+    <div class="col-lg-6">
+        <div class="form-group">
+            <input type="search" placeholder="id Medecins"
+            [(ngModel)]="idMedecin" (keyup)="chargerR()" />
+        </div>
+    </div>
+
     
     <!--affichage des médecins -->
     <div class="list-group">
         <ul>
             <li class="list-group-item" *ngFor="let medecin of lesMedecins"
             (click)="selectionner(medecin)">
-            {{medecin.nom}} {{medecin.prenom}} ;dep : {{medecin.departement}}
+            {{medecin.nom}} {{medecin.prenom}} dep: {{medecin.departement}}
             </li>
         </ul>
     </div>
+
+ 
+ 
+<!--affichage des rapports-->
+<table class="table table-bordered" *ngIf="afficherRapports">
+    <tr>
+        <td>{{rapport.date }} </td>
+        <td>{{rapport.motif }} </td>
+        <td>{{rapport.bilan }} </td>
+        <td>{{rapport.nom }} </td>
+    </tr>
+    <tr *ngFor="let rapport of lesRapports">
+
+        <td>{{rapport.date }} </td>
+        <td>{{rapport.motif }} </td>
+        <td>{{rapport.bilan }} </td>
+        <td>{{rapport.nom }} </td>
+    </tr>
+</table>
+
+
 </body>
 </html>

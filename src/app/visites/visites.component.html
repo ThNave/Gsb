@@ -1,6 +1,6 @@
 <p>visites works!</p>
 
-<!--<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,9 +8,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>-->
-    <!--affichage des rapports-->
-    <!--<table class="table table-bordered" *ngIf="afficherRapports">
+
+<div class="col-lg-6">
+    <div class="form-group">
+        <input type="search" placeholder="Nom du rapport..."
+        [(ngModel)]="idMedecin" (keyup)="chargerRapports()" />
+    </div>
+</div>
+
+
+
+
+
+
+<!--affichage des rapports -->
+<div class="list-group">
+    <ul>
+        <li class="list-group-item" *ngFor="let rapport of lesRapports"
+        (click)="selectionner(rapport)">
+        {{rapport.date}} {{rapport.motif}} {{rapport.bilan}} {{rapport.idMedecin}}
+        </li>
+    </ul>
+</div>
+
+<body>
+    <!--affichge des rapports-->
+    <h2>affichage des rapports</h2>
+    <table class="table table-bordered" *ngIf="afficherRapports">
         <tr>
             <th>Date</th>
             <th>motif</th>
@@ -25,4 +49,5 @@
         </tr>
     </table>
 </body>
-</html>-->
+
+</html>

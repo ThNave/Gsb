@@ -24,6 +24,7 @@ export class ConnexionComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //valider bdd
   
     valider():void{
       this.dataService.connexion(this.login,this.password).subscribe({
@@ -39,8 +40,9 @@ export class ConnexionComponent implements OnInit {
         }
         
       });
-    }
+    } 
       
+    //valider sans bdd :
     /*valider() : void{
     if(this.login == "toto"  || this.password =="titi")
     this.estCache=true;
@@ -55,8 +57,8 @@ export class ConnexionComponent implements OnInit {
     //visiteur : any;
 
     //constructor(private : Router, private dataService :   DataService) {}
-*/  
+ 
 
+*/
 
-
-  }
+    }

@@ -8,14 +8,19 @@ import { catchError, retry } from 'rxjs/operators';
     providedIn: 'root'
 })
 export class DataService {
-    //url api de la maison
-    private urlAPI = "http://localhost/phpmyadmin/index.php?route=/database/structure&db=restgsb"
+    
+   
+    
     //url api du lycée
-    //private urlAPI = "http://localhost/restGSB"
+    private urlAPI = "http://localhost/restGSB"
     dataService: any;
     lesMedecins: any;
     nomMedecin: any;
+    motifRapport: any;
+    lesRapport: any;
+    idMedecin: any;
     
+
 
     constructor(private http: HttpClient) { }
 
@@ -25,11 +30,27 @@ export class DataService {
         return req
     }
 
+
+
+
+
+
     public chargerMedecins(nomMedecin: string){
         let url = this.urlAPI + "/medecins?nom="+ nomMedecin;
         let req = this.http.get<string>(url);
         return req
     }
+
+    public chargerRapports(idMedecin : number){
+        let url = this.urlAPI + "/rapport/"+idMedecin;
+        let req = this.http.get<string>(url);
+        return req
+
+    } 
+
+
+
+
     charger(){
         this.dataService.chargerMedecins(this.nomMedecin).subscribe({
             next : (data: any) => {
@@ -40,4 +61,36 @@ export class DataService {
             }
         });
     }
+    
+    chargerR(){
+        this.dataService.chargerRapports(this.idMedecin).subscribe({
+            next : (data: any) => {
+                this.lesRapport = data;
+            },
+            error : (error: any) => {
+                console.log(error);
+            }
+        });
+    }
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
