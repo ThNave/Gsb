@@ -80,7 +80,7 @@ export class MedecinsComponent implements OnInit {
   }
 
 //nope pas utilisé
-  /*chargerR(){
+  chargerR(){
     this.dataService.chargerRapports(this.idMedecin).subscribe({
         next : (data: any) => {
             this.lesRapport = data;
@@ -89,7 +89,7 @@ export class MedecinsComponent implements OnInit {
             console.log(error);
         }
     });
-  }*/
+  }
 
 
 

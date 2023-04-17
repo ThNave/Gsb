@@ -62,7 +62,7 @@ export class DataService {
         });
     }
     
-    /*
+    //pas utilisé
     chargerR(){
         this.dataService.chargerRapports(this.idMedecin).subscribe({
             next : (data: any) => {
@@ -72,7 +72,7 @@ export class DataService {
                 console.log(error);
             }
         });
-    } */
+    } 
 
     
 
