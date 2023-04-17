@@ -7,33 +7,38 @@
     <title>medecins</title>
 </head>
 <body>
+    <!-- Titre -->
     <h2>
         Les medecins
     </h2>
+
+    <!-- Barre de Navigations -->
     <nav class="navbar navbar-inverse" [hidden]="estCacheMenu">
         <ul class="nav navbar-nav" style=" flex-direction: row;
             justify-content:left">
-            <li><a (click)="derniersRapports()">Derniers Rapports</a></li>
+            <li><a (click)="derniersRapports()">Derniers Rapports</a></li> <!-- Affiche le dernier rapports -->
             <li><a (click)="majMedecin()">MAJ</a></li>
         </ul>
     </nav>
+
+<!-- Barre de Recherche Nom du medecins -->
     <div class="col-lg-6">
         <div class="form-group">
             <input type="search" placeholder="Nom du médecin..."
-            [(ngModel)]="nomMedecin" (keyup)="charger()" />
+            [(ngModel)]="nomMedecin" (keyup)="charger()" /> <!--Le ngmodel permet de recuperer dans la base de données -->
         </div>
     </div>
 
-
-    <div class="col-lg-6">
+<!-- A laisser de coté -->
+    <!--<div class="col-lg-6">
         <div class="form-group">
             <input type="search" placeholder="id Medecins"
             [(ngModel)]="idMedecin" (keyup)="chargerR()" />
         </div>
-    </div>
+    </div> -->
 
     
-    <!--affichage des médecins -->
+    <!--affichage des médecins nom prenom et departement -->
     <div class="list-group">
         <ul>
             <li class="list-group-item" *ngFor="let medecin of lesMedecins"

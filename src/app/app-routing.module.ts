@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+//importé les différents module
 import { ConnexionComponent } from './connexion/connexion.component';
 import { MedecinsComponent } from './medecins/medecins.component';
 import { VisitesComponent } from './visites/visites.component';
@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
+//les routes de chaque page
 const routes: Routes = [
   { path:'',component: ConnexionComponent},
   { path:'medecins', component: MedecinsComponent },

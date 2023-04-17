@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+//import des modules
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ConnexionComponent } from './connexion/connexion.component';
@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { DataService } from './app.service.data';
 import { HttpClientModule } from '@angular/common/http';
 
+//déclaré et importer modules
 @NgModule({
   declarations: [
     AppComponent,

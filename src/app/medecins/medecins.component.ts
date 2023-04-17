@@ -1,7 +1,9 @@
+//Importation des modules
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from '../app.service.data';
 
+//Component zt chemin
 @Component({
   selector: 'app-medecins',
   templateUrl: './medecins.component.html',
@@ -9,6 +11,7 @@ import { DataService } from '../app.service.data';
 })
 export class MedecinsComponent implements OnInit {
 
+  //Les différentes variable
   nomMedecin!: string;
   lesMedecins : Array<any> = new Array();
   medecin : any;
@@ -41,6 +44,8 @@ export class MedecinsComponent implements OnInit {
   lesRapport: any;
   afficherMedecin: boolean | undefined;
 
+
+  //lié base de donnée
   constructor(private router : Router,private dataService : DataService) {
 
   } 
@@ -48,6 +53,7 @@ export class MedecinsComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  //Affiche le dernier rapport du medecin cliqué
   derniersRapports() : void{
     this.afficherMedecin = false;
     this.dataService.chargerRapports(this.idMedecin).subscribe({
@@ -61,8 +67,7 @@ export class MedecinsComponent implements OnInit {
   }
   
 
-
-
+//charger medecins
   charger(){
     this.dataService.chargerMedecins(this.nomMedecin).subscribe({
         next : (data: any) => {
@@ -74,8 +79,8 @@ export class MedecinsComponent implements OnInit {
     });
   }
 
-
-  chargerR(){
+//nope pas utilisé
+  /*chargerR(){
     this.dataService.chargerRapports(this.idMedecin).subscribe({
         next : (data: any) => {
             this.lesRapport = data;
@@ -84,7 +89,7 @@ export class MedecinsComponent implements OnInit {
             console.log(error);
         }
     });
-  }
+  }*/
 
 
 

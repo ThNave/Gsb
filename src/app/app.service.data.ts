@@ -11,7 +11,7 @@ export class DataService {
     
    
     
-    //url api du lycée
+    //url api du lycée pour connecter a la base de donnée
     private urlAPI = "http://localhost/restGSB"
     dataService: any;
     lesMedecins: any;
@@ -62,6 +62,7 @@ export class DataService {
         });
     }
     
+    /*
     chargerR(){
         this.dataService.chargerRapports(this.idMedecin).subscribe({
             next : (data: any) => {
@@ -71,7 +72,7 @@ export class DataService {
                 console.log(error);
             }
         });
-    }
+    } */
 
     
 

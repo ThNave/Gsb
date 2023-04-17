@@ -1,7 +1,10 @@
+//importé les modules
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { DataService } from '../app.service.data';
 
+
+//component
 @Component({
   selector: 'app-connexion',
   templateUrl: './connexion.component.html',
@@ -9,6 +12,8 @@ import { DataService } from '../app.service.data';
 })
 export class ConnexionComponent implements OnInit {
   
+
+  //créations variable
   lblLogin:string="Login";
   lblMdp: string="Mot de passe";
   titre: string="";
@@ -17,23 +22,25 @@ export class ConnexionComponent implements OnInit {
   estCache : boolean = true;  
   lblMessage: string ="erreur";
 
-  constructor(private router : Router,private dataService : DataService) {
+
+  //lié base de donnée
+  constructor(private router : Router,private dataService : DataService) { 
 
   }
 
+  // après le ngOnInit, c'est ici qu'on met nos fonctions
   ngOnInit(): void {
   }
 
   //valider bdd
-  
     valider():void{
-      this.dataService.connexion(this.login,this.password).subscribe({
+      this.dataService.connexion(this.login,this.password).subscribe({ //si les identifiants  soont valide
         next : (data) => {
           console.log(this.login+this.password)
           console.log(data)
-          this.router.navigate(['accueil']);
+          this.router.navigate(['accueil']); //emmene sur accueil
         },
-        error : (error) =>{
+        error : (error) =>{ //si ils ne sont pas valide
           console.log(this.login+this.password)
     
             console.log(error)
